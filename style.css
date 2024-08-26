@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --font-family: 'Inter', sans-serif;
+    --color-primary: #0A3871;
+    --color-secondary: #D8DFE8;
+    --color-text: #343A40;
+    --color-background: #D9D9D9;
+    --color-button-text: white;
+    --color-secondary-text: #495057;
+    --color-hover-primary: #083a5e; /* Color de fondo al hacer hover en el botón encriptar */
+    --color-hover-secondary: #b0c4de; /* Color de fondo al hacer hover en el botón desencriptar */
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-background);
+    min-height: 100vh;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background);
+    width: 100%;
+    padding: 20px;
+    position: relative;
+}
+
+.logo_a {
+    height: 50px;
+    position: absolute;
+    left: 20px;
+}
+
+.presentacion_titulo {
+    font-size: 24px;
+    margin: 0;
+    color: #0A3871;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.ingreso_texto_botones {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    flex-grow: 1;
+}
+
+.ingreso_texto {
+    width: 100%;
+    margin-bottom: 20px; /* Espacio adicional debajo del textarea */
+}
+
+.textarea_texto {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-background);
+    resize: vertical; /* Permite que el textarea se expanda verticalmente */
+    min-height: 100px; /* Altura mínima */
+}
+
+.boton_encriptar, .boton_desencriptar {
+    width: 48%;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+}
+
+.boton_encriptar {
+    background-color: var(--color-primary);
+    color: var(--color-button-text);
+}
+
+.boton_encriptar:hover {
+    background-color: var(--color-hover-primary);
+    color: var(--color-button-text);
+}
+
+.boton_desencriptar {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.boton_desencriptar:hover {
+    background-color: var(--color-hover-secondary);
+    color: var(--color-primary);
+}
+
+.boton_copiar {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+    margin-top: 20px; /* Espacio adicional encima del botón copiar */
+}
+
+.boton_copiar:hover {
+    background-color: var(--color-hover-secondary);
+    color: var(--color-primary);
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px; /* Espacio adicional encima de los botones */
+    position: relative;
+}
+
+.texto_procesado {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-text);
+    margin-left: auto;
+}
+
+.texto_procesado img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.texto_procesado p {
+    margin: 0;
+}
+
+.texto_procesado .secondary-text {
+    color: var(--color-secondary-text);
+    margin-top: 10px;
+}
+
+.label-con-icono {
+    display: flex;
+    align-items: center;
+    color: var(--color-secondary-text);
+    font-size: 16px;
+    margin-bottom: 10px;
+    justify-content: center;
+    position: relative;
+    margin-top: 20px; /* Espacio adicional encima del label */
+}
+
+.label-con-icono .icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--color-secondary-text);
+    color: white;
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+footer {
+    background-color: var(--color-background);
+    color: var(--color-secondary-text);
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin-top: auto;
+}
+
+/* Media Queries para responsividad */
+@media (min-width: 768px) {
+    .contenedor {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .ingreso_texto_botones {
+        width: 45%;
+        margin-right: 5%;
+    }
+
+    .texto_procesado {
+        width: 30%;
+    }
+}
+
+@media (max-width: 767px) {
+    .texto_procesado img {
+        display: none; /* Ocultar la imagen en pantallas pequeñas */
+    }
+}
